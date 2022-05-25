@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_4qi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "test1",
+			"table": "MoviesData"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,36 @@
+{
+	"name": "DestinationDataset_lby",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PassCount",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "SumTripDist",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "AvgTripDist",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "test1",
+			"table": "NYCTaxiCounts"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

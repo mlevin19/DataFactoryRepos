@@ -1,0 +1,9 @@
+{
+	"name": "mladf19",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9e76fa44-3251-4a00-a6c0-ce28b354616a",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

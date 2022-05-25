@@ -1,0 +1,64 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqltestTable",
+						"type": "DatasetReference"
+					},
+					"name": "sqltable"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable3",
+						"type": "DatasetReference"
+					},
+					"name": "sqltable2"
+				}
+			],
+			"transformations": [
+				{
+					"name": "csvfile"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          c1 as integer,",
+				"          c2 as integer,",
+				"          c3 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> sqltable",
+				"sqltable select(mapColumn(",
+				"          c1,",
+				"          c2,",
+				"          c3",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> csvfile",
+				"csvfile sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          c1 as integer,",
+				"          c2 as integer,",
+				"          c3 as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sqltable2"
+			]
+		}
+	}
+}

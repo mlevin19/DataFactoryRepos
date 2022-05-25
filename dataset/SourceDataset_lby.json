@@ -1,0 +1,34 @@
+{
+	"name": "SourceDataset_lby",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeParquet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "NYCTaxi/PassengerCountStats_parquetformat",
+				"fileSystem": "sydemolake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "PassengerCount",
+				"type": "INT32"
+			},
+			{
+				"name": "SumTripDistance",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "AvgTripDistance",
+				"type": "DOUBLE"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
