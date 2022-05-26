@@ -273,7 +273,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy_qnj",
+						"name": "Copy_v2",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -318,6 +318,8 @@
 								}
 							},
 							"enableStaging": false,
+							"parallelCopies": 1,
+							"enableSkipIncompatibleRow": true,
 							"validateDataConsistency": false
 						},
 						"inputs": [
