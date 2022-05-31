@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_blobtoSQL",
+				"name": "Copy_blobtoSQL1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
